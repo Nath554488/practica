@@ -7,6 +7,8 @@ Contenido
 - Archivos HTML y PHP desarrollados en clase
 - Conexión PHP ↔ MySQL y consultas desde formulario
 - Proyecto de portafolio intermedio
+- Y otras cosas de la clase
+- 
 Nathalia Guerra Salazar  
 Ingeniería en Sistemas  
 
