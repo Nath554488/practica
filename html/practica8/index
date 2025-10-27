@@ -1,0 +1,55 @@
+<?php
+$servername = "db"; 
+$username = "usuario";
+$password = "Mjn202424";
+$dbname = "usuario";
+
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Ejecutar consulta
+$result = mysqli_query($conn, "SELECT * FROM compra;");
+
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabla de Compras</title>
+    <link rel="stylesheet" href="tabla.css"> <!-- tu CSS externo -->
+</head>
+<body>
+    <h1>Tabla de Compras</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Modelo</th>
+                <th>Usuario</th>
+                <th>Folio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+
+            while ($row = mysqli_fetch_array($result)) {
+                echo "<tr>";
+                echo "<td>" . htmlspecialchars($row['id']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['idModelo']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['idUsuario']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['folio']) . "</td>";
+                echo "</tr>";
+            }
+
+            mysqli_close($conn);
+            ?>
+        </tbody>
+    </table>
+</body>
+</html>
