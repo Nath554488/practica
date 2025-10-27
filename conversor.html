@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Conversor de Unidades</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <header>
+    <h1>Conversor de Unidades</h1>
+    <p class="muted">Temperatura · Distancia · Tiempo · Moneda</p>
+  </header>
+
+  <main>
+    <section class="card" aria-labelledby="titulo-form">
+      <h2 id="titulo-form" class="sr-only">Formulario de conversión</h2>
+
+      <div class="grid" role="group" aria-labelledby="categoria-label">
+        <div>
+          <label id="categoria-label" for="categoria">Categoría</label>
+          <select id="categoria" aria-describedby="ayuda-categoria">
+            <option value="temperatura">Temperatura</option>
+            <option value="distancia">Distancia</option>
+            <option value="tiempo">Tiempo</option>
+            <option value="moneda">Moneda</option>
+          </select>
+          <div id="ayuda-categoria" class="muted">Elige qué quieres convertir.</div>
+        </div>
+
+        <div>
+          <label for="cantidad">Cantidad</label>
+          <input id="cantidad" type="number" step="any" placeholder="Ingresa un valor" inputmode="decimal" />
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:12px">
+        <div>
+          <label for="desde">De</label>
+          <select id="desde"></select>
+        </div>
+        <div>
+          <label for="hacia">A</label>
+          <select id="hacia"></select>
+        </div>
+      </div>
+
+      <div class="actions" style="margin-top:16px;">
+        <button id="btnConvertir" type="button">Convertir</button>
+        <button id="btnIntercambiar" type="button" title="Intercambiar unidades">Intercambiar</button>
+        <span class="muted" id="nota-monedas">Para moneda se usan tasas fijas de ejemplo.</span>
+      </div>
+
+      <div style="margin-top:16px;">
+        <label for="resultado">Resultado</label>
+        <input id="resultado" type="text" readonly value="" aria-live="polite" />
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js" defer></script>
+
+   <p style="text-align:center; margin-top:30px;">
+    <a href="../../practicas.html" class="btn-volver"> Volver a Prácticas</a>
+  </p>
+</body>
+</html>

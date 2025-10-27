@@ -1,0 +1,153 @@
+:root {
+  --maxw: 920px;
+  --azul-claro: #e0f2ff;
+  --azul-medio: #60a5fa;
+  --azul-oscuro: #1e3a8a;
+  --texto: #0f172a;
+  --gris: #374151;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  background-color: var(--azul-claro);
+  color: var(--texto);
+  margin: 0;
+  line-height: 1.6;
+}
+
+
+header {
+  background-color: var(--azul-medio);
+  color: white;
+  padding: 20px 16px;
+  text-align: center;
+  border-bottom: 3px solid var(--azul-oscuro);
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.muted {
+  color: #334155;
+  font-size: 0.95rem;
+}
+
+
+main {
+  max-width: var(--maxw);
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+
+.card {
+  background-color: white;
+  border: 2px solid var(--azul-medio);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+.grid {
+  display: grid;
+  gap: 12px;
+}
+
+@media (min-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+.row {
+  display: grid;
+  gap: 12px;
+}
+
+@media (min-width: 700px) {
+  .row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+label {
+  display: block;
+  font-size: 15px;
+  color: var(--texto);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+select,
+input[type="number"],
+input[readonly] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--gris);
+  background-color: #f0f9ff;
+  color: var(--texto);
+}
+
+select:focus,
+input:focus {
+  border-color: var(--azul-medio);
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.3);
+  outline: none;
+}
+
+
+.actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--azul-oscuro);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background-color: #2e4dc9;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+footer {
+  text-align: center;
+  margin: 20px 0 40px;
+  color: #1e3a8a;
+  font-size: 0.9rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
